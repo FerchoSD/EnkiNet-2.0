@@ -1,0 +1,136 @@
+ESTRUCTURA DEL SITIO WEB ENKINET
+============================
+
+1. HEADER
+---------
+Componentes:
+- Logo EnkiNet (imagen, enlace a inicio)
+- Menú de navegación:
+  * Inicio
+  * Servicios
+  * Catálogo
+  * Contacto
+- Botón de cambio de tema (claro/oscuro)
+- Menú hamburguesa para móviles
+
+2. HERO SECTION (JUMBOTRON)
+--------------------------
+Componentes:
+- Título principal: "Transformamos ideas en realidades digitales"
+- Subtítulo descriptivo
+- Imagen de fondo con overlay
+- Formulario de registro:
+  * Campo de nombre
+  * Campo de email
+  * Campo de teléfono
+  * Botón de envío
+- Efectos de animación al cargar
+
+3. SERVICIOS PRINCIPALES
+-----------------------
+Componentes:
+- Encabezado de sección
+- Carrusel de servicios con:
+  a) Desarrollo Web
+     * Imagen ilustrativa
+     * Título
+     * Descripción
+     * Lista de características
+
+  b) Aplicaciones Móviles
+     * Imagen ilustrativa
+     * Título
+     * Descripción
+     * Lista de características
+
+  c) Software Personalizado
+     * Imagen ilustrativa
+     * Título
+     * Descripción
+     * Lista de características
+
+  d) Análisis Avanzado de Datos
+     * Imagen ilustrativa
+     * Título
+     * Descripción
+     * Lista de características
+
+  e) Gestión de Inversiones
+     * Imagen ilustrativa
+     * Título
+     * Descripción
+     * Lista de características
+
+  f) Optimización de Ventas
+     * Imagen ilustrativa
+     * Título
+     * Descripción
+     * Lista de características
+
+  g) Redes Inteligentes
+     * Imagen ilustrativa
+     * Título
+     * Descripción
+     * Lista de características
+
+- Botones de navegación del carrusel
+- Animaciones al hacer scroll
+
+4. CATÁLOGO DE PRODUCTOS
+------------------------
+Componentes:
+- Encabezado de sección
+- Grid de productos:
+  a) Portal de Clientes
+     * Imagen del producto
+     * Título
+     * Descripción detallada
+     * Botón de más información
+
+  b) Consultoría Tecnológica
+     * Imagen del producto
+     * Título
+     * Descripción detallada
+     * Botón de más información
+
+- Efectos de hover en las tarjetas
+- Animaciones al hacer scroll
+
+5. FOOTER
+---------
+Componentes:
+- Logo EnkiNet
+- Enlaces de navegación
+- Redes sociales:
+  * Facebook
+  * Twitter
+  * LinkedIn
+  * Instagram
+- Información de contacto:
+  * Dirección
+  * Teléfono
+  * Email
+- Copyright
+- Enlaces legales:
+  * Política de privacidad
+  * Términos y condiciones
+
+6. ELEMENTOS ADICIONALES
+-----------------------
+- Botón de "Volver arriba"
+- Indicadores de scroll
+- Preloader al cargar la página
+- Mensajes de confirmación para formularios
+- Tooltips informativos
+- Modales para información detallada
+
+7. CARACTERÍSTICAS TÉCNICAS
+--------------------------
+- Diseño responsive (mobile-first)
+- Soporte para modo oscuro/claro
+- Optimización de imágenes
+- Lazy loading para imágenes
+- Animaciones suaves al scroll
+- Validación de formularios
+- Cross-browser compatibility
+- Optimización SEO
