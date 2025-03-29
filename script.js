@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Seleccionar elementos del DOM
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
-  const header = document.querySelector("header");
+  const header = document.querySelector("header") || document.querySelector(".site-header");
   const logoContainer = document.querySelector(".logo-container");
   const serviciosCarousel = document.querySelector(".servicios-carousel");
   const productosCarousel = document.querySelector(".productos-carousel");
@@ -12,6 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeBtn = document.getElementById("theme-btn");
   const stats = document.querySelectorAll(".stat-item[data-count]");
   const statsSection = document.querySelector(".nosotros-stats");
+
+  // Determinar en qué página estamos
+  const currentPage = window.location.pathname.split("/").pop();
+  const isIndexPage = currentPage === "" || currentPage === "index.html";
+  const isServiciosPage = currentPage === "servicios.html";
+  const isContactoPage = currentPage === "contacto.html";
+  const isNosotrosPage = currentPage === "nosotros.html";
+  const isCatalogoPage = currentPage === "catalogo.html";
 
   // Cambio de tema
   if (themeBtn) {
@@ -75,20 +83,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // Carruseles funcionales
   const initCarousel = (carouselSelector, prevSelector, nextSelector) => {
     const carousel = document.querySelector(carouselSelector);
+    if (!carousel) return;
+    
     const prevBtn = document.querySelector(prevSelector);
     const nextBtn = document.querySelector(nextSelector);
-    if (!carousel || !prevBtn || !nextBtn) return;
-
+    if (!prevBtn || !nextBtn) return;
+    
     const items = carousel.children;
+    if (!items || items.length === 0) return;
+    
     let currentIndex = 0;
+    let itemWidth = 0;
+    let visibleItems = 3;
 
     const updateCarousel = () => {
-      const itemWidth = items[0].offsetWidth + 30; // Incluye el gap
-      carousel.scrollTo({
-        left: currentIndex * itemWidth,
-        behavior: "smooth",
-      });
+      itemWidth = items[0].offsetWidth + 30;
+      const windowWidth = window.innerWidth;
+      visibleItems = windowWidth > 1200 ? 3 : windowWidth > 768 ? 2 : 1;
+      carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     };
+
+    updateCarousel();
 
     prevBtn.addEventListener("click", () => {
       if (currentIndex > 0) {
@@ -107,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateCarousel);
   };
 
-  if (serviciosCarousel) {
+  if (serviciosCarousel && (isIndexPage || isServiciosPage)) {
     initCarousel(
       ".servicios-carousel",
       ".servicios .carousel-btn.prev",
@@ -115,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  if (productosCarousel) {
+  if (productosCarousel && (isIndexPage || isCatalogoPage)) {
     initCarousel(
       ".productos-carousel",
       ".catalogo .carousel-btn.prev",
@@ -145,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   animateOnScroll.forEach(el => observer.observe(el));
 
   // Contadores animados en la sección de Nosotros
-  if (statsSection && stats.length > 0) {
+  if (statsSection && stats.length > 0 && (isIndexPage || isNosotrosPage)) {
     const statsObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -223,14 +238,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Función para desplazarse a un servicio específico
   window.scrollToService = (index) => {
-    if (!document.querySelector(".servicios-carousel")) {
-      window.location.href = `index.html#servicios`;
-      setTimeout(() => scrollToService(index), 100);
-      return;
+    const currentPageHasCarousel = document.querySelector(".servicios-carousel");
+    
+    if (!currentPageHasCarousel) {
+      if (!isServiciosPage) {
+        window.location.href = `servicios.html#servicios`;
+        // Guardar el índice en sessionStorage para usarlo después de la redirección
+        sessionStorage.setItem('targetServiceIndex', index);
+        return;
+      }
     }
 
     const carousel = document.querySelector(".servicios-carousel");
+    if (!carousel) return;
+    
     const items = carousel.children;
+    if (!items || items.length === 0) return;
+    
     const itemWidth = items[0].offsetWidth + 30;
     carousel.scrollTo({
       left: index * itemWidth,
@@ -238,11 +262,70 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const serviciosSection = document.getElementById("servicios");
-    window.scrollTo({
-      top: serviciosSection.offsetTop - 60,
+    if (serviciosSection) {
+      window.scrollTo({
+        top: serviciosSection.offsetTop - 60,
+        behavior: "smooth",
+      });
+    }
+  };
+  
+  // Función para desplazarse a un producto específico en el catálogo
+  window.scrollToProduct = (index) => {
+    const currentPageHasCarousel = document.querySelector(".productos-carousel");
+    
+    if (!currentPageHasCarousel) {
+      if (!isCatalogoPage) {
+        window.location.href = `catalogo.html#catalogo`;
+        // Guardar el índice en sessionStorage para usarlo después de la redirección
+        sessionStorage.setItem('targetProductIndex', index);
+        return;
+      }
+    }
+
+    const carousel = document.querySelector(".productos-carousel");
+    if (!carousel) return;
+    
+    const items = carousel.children;
+    if (!items || items.length === 0) return;
+    
+    const itemWidth = items[0].offsetWidth + 30;
+    carousel.scrollTo({
+      left: index * itemWidth,
       behavior: "smooth",
     });
+
+    const catalogoSection = document.getElementById("catalogo");
+    if (catalogoSection) {
+      window.scrollTo({
+        top: catalogoSection.offsetTop - 60,
+        behavior: "smooth",
+      });
+    }
   };
+  
+  // Verificar si tenemos un índice guardado después de redirección
+  if (isServiciosPage) {
+    const targetServiceIndex = sessionStorage.getItem('targetServiceIndex');
+    if (targetServiceIndex !== null) {
+      // Esperar a que la página se cargue completamente
+      setTimeout(() => {
+        scrollToService(parseInt(targetServiceIndex));
+        sessionStorage.removeItem('targetServiceIndex');
+      }, 500);
+    }
+  }
+  
+  if (isCatalogoPage) {
+    const targetProductIndex = sessionStorage.getItem('targetProductIndex');
+    if (targetProductIndex !== null) {
+      // Esperar a que la página se cargue completamente
+      setTimeout(() => {
+        scrollToProduct(parseInt(targetProductIndex));
+        sessionStorage.removeItem('targetProductIndex');
+      }, 500);
+    }
+  }
 
   // Formulario de newsletter
   if (newsletterForm) {

@@ -12,14 +12,6 @@
 </head>
 <body class="dark-theme">
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="preloader-content">
-      <img src="assets/logo.png" alt="Cargando..." class="preload-logo">
-      <p class="preload-text">Transformando ideas...</p>
-    </div>
-  </div>
-
   <!-- Theme Toggle Button -->
   <div class="theme-toggle">
     <button id="theme-btn" aria-label="Cambiar tema">
@@ -62,44 +54,112 @@
           <p>Ofrecemos soluciones tecnológicas avanzadas para llevar tu negocio al siguiente nivel.</p>
         </div>
         <div class="carousel-container">
+          <button class="carousel-btn prev" aria-label="Anterior servicio">
+            <i class="fas fa-chevron-left"></i>
+          </button>
           <div class="servicios-carousel">
-
-            <!-- Servicio 1 -->
-            <div class="servicio">
+            <div class="servicio" onclick="window.location.href='servicio-detalle.html?servicio=desarrollo-web'">
               <div class="servicio-img">
-                <img src="assets/desarrollo-web.jpg" alt="Desarrollo Web">
+                <img src="assets/desarrollo-web.jpg" alt="Desarrollo Web" loading="lazy" width="300" height="200">
               </div>
               <div class="servicio-content">
                 <h3>Desarrollo Web</h3>
-                <p>Páginas web modernas y funcionales, adaptadas a cualquier dispositivo.</p>
+                <p>Páginas web modernas y funcionales, adaptadas a cualquier dispositivo con experiencias de usuario optimizadas. Diseñamos sitios web que no solo son visualmente atractivos, sino también rápidos, seguros y optimizados para motores de búsqueda, garantizando una presencia digital sólida.</p>
+                <ul class="servicio-features">
+                  <li><i class="fas fa-check" data-tooltip="Optimizado para móviles"></i> Diseño responsivo para todos los dispositivos</li>
+                  <li><i class="fas fa-check" data-tooltip="Mejor visibilidad"></i> Optimización SEO para mejor posicionamiento</li>
+                  <li><i class="fas fa-check" data-tooltip="Siempre actualizado"></i> Mantenimiento continuo para un rendimiento óptimo</li>
+                </ul>
               </div>
             </div>
-
-            <!-- Servicio 2 -->
-            <div class="servicio">
+            <div class="servicio" onclick="window.location.href='servicio-detalle.html?servicio=aplicaciones-moviles'">
               <div class="servicio-img">
-                <img src="assets/app-movil.jpg" alt="Aplicaciones móviles">
+                <img src="assets/app-movil.jpg" alt="Aplicaciones móviles" loading="lazy" width="300" height="200">
               </div>
               <div class="servicio-content">
                 <h3>Aplicaciones Móviles</h3>
-                <p>Apps intuitivas y escalables diseñadas para resolver problemas reales.</p>
+                <p>Apps intuitivas y escalables diseñadas para resolver problemas reales y mejorar la experiencia del usuario. Desarrollamos aplicaciones nativas y multiplataforma que se integran perfectamente con tus sistemas existentes, ofreciendo funcionalidades avanzadas y un rendimiento excepcional.</p>
+                <ul class="servicio-features">
+                  <li><i class="fas fa-check" data-tooltip="Flexibilidad"></i> Desarrollo nativo y multiplataforma</li>
+                  <li><i class="fas fa-check" data-tooltip="Engagement"></i> Notificaciones push personalizadas</li>
+                  <li><i class="fas fa-check" data-tooltip="Insights"></i> Analíticas avanzadas para medir el impacto</li>
+                </ul>
               </div>
             </div>
-
-            <!-- Servicio 3 -->
-            <div class="servicio">
+            <div class="servicio" onclick="window.location.href='servicio-detalle.html?servicio=software-personalizado'">
               <div class="servicio-img">
-                <img src="assets/software-personalizado.jpg" alt="Software Personalizado">
+                <img src="assets/software-personalizado.jpg" alt="Software Personalizado" loading="lazy" width="300" height="200">
               </div>
               <div class="servicio-content">
                 <h3>Software Personalizado</h3>
-                <p>Soluciones adaptadas a tus necesidades específicas con seguridad garantizada.</p>
+                <p>Soluciones adaptadas a tus necesidades específicas, con escalabilidad y seguridad garantizadas. Creamos software a medida que optimiza tus procesos internos, mejora la productividad y se adapta al crecimiento de tu negocio, con un enfoque en la seguridad y la integración.</p>
+                <ul class="servicio-features">
+                  <li><i class="fas fa-check" data-tooltip="Personalización"></i> Desarrollo a medida según tus requerimientos</li>
+                  <li><i class="fas fa-check" data-tooltip="Integración"></i> Integración con sistemas existentes</li>
+                  <li><i class="fas fa-check" data-tooltip="Soporte"></i> Soporte técnico 24/7</li>
+                </ul>
               </div>
             </div>
-
-            <!-- Puedes añadir más servicios aquí -->
-
+            <div class="servicio" onclick="window.location.href='servicio-detalle.html?servicio=analisis-datos'">
+              <div class="servicio-img">
+                <img src="assets/analisis-datos.jpg" alt="Análisis Avanzado de Datos" loading="lazy" width="300" height="200">
+              </div>
+              <div class="servicio-content">
+                <h3>Análisis Avanzado de Datos</h3>
+                <p>Insights valiosos para decisiones informadas, transformando tus datos en ventajas competitivas. Utilizamos tecnologías de inteligencia artificial y aprendizaje automático para analizar tus datos y proporcionarte reportes detallados que impulsen tu estrategia empresarial.</p>
+                <ul class="servicio-features">
+                  <li><i class="fas fa-check" data-tooltip="Visualización"></i> Visualización de datos interactiva</li>
+                  <li><i class="fas fa-check" data-tooltip="Predicciones"></i> Predicciones con IA para anticipar tendencias</li>
+                  <li><i class="fas fa-check" data-tooltip="Reportes"></i> Reportes personalizados para tu negocio</li>
+                </ul>
+              </div>
+            </div>
+            <div class="servicio" onclick="window.location.href='servicio-detalle.html?servicio=gestion-inversiones'">
+              <div class="servicio-img">
+                <img src="assets/gestion-inversiones.jpg" alt="Gestión de Inversiones" loading="lazy" width="300" height="200">
+              </div>
+              <div class="servicio-content">
+                <h3>Gestión de Inversiones</h3>
+                <p>Maximizamos tu retorno de inversión con estrategias basadas en datos y análisis de mercado. Ofrecemos herramientas avanzadas para monitorear tus inversiones en tiempo real, con asesoramiento experto para diversificar tu portafolio y minimizar riesgos.</p>
+                <ul class="servicio-features">
+                  <li><i class="fas fa-check" data-tooltip="Seguridad"></i> Portafolios diversificados para mayor seguridad</li>
+                  <li><i class="fas fa-check" data-tooltip="Monitoreo"></i> Seguimiento en tiempo real de tus inversiones</li>
+                  <li><i class="fas fa-check" data-tooltip="Asesoramiento"></i> Asesoramiento financiero personalizado</li>
+                </ul>
+              </div>
+            </div>
+            <div class="servicio" onclick="window.location.href='servicio-detalle.html?servicio=optimizacion-ventas'">
+              <div class="servicio-img">
+                <img src="assets/optimizacion-ventas.jpg" alt="Optimización de Ventas" loading="lazy" width="300" height="200">
+              </div>
+              <div class="servicio-content">
+                <h3>Optimización de Ventas</h3>
+                <p>Estrategias efectivas para aumentar ventas y mejorar la satisfacción del cliente. Analizamos tu embudo de ventas, diseñamos campañas personalizadas y automatizamos procesos para maximizar tus ingresos y fidelizar a tus clientes.</p>
+                <ul class="servicio-features">
+                  <li><i class="fas fa-check" data-tooltip="Análisis"></i> Análisis de embudos para identificar oportunidades</li>
+                  <li><i class="fas fa-check" data-tooltip="Campañas"></i> Campañas personalizadas para tu audiencia</li>
+                  <li><i class="fas fa-check" data-tooltip="Automatización"></i> Automatización de procesos para mayor eficiencia</li>
+                </ul>
+              </div>
+            </div>
+            <div class="servicio" onclick="window.location.href='servicio-detalle.html?servicio=redes-inteligentes'">
+              <div class="servicio-img">
+                <img src="assets/redes-inteligentes.jpg" alt="Redes Inteligentes" loading="lazy" width="300" height="200">
+              </div>
+              <div class="servicio-content">
+                <h3>Redes Inteligentes</h3>
+                <p>Maximiza la eficacia operativa con sistemas de redes avanzados y seguros. Implementamos soluciones de redes inteligentes que optimizan el ancho de banda, garantizan la seguridad cibernética y ofrecen monitoreo en tiempo real para mantener tu infraestructura siempre operativa.</p>
+                <ul class="servicio-features">
+                  <li><i class="fas fa-check" data-tooltip="Monitoreo"></i> Monitoreo en tiempo real de tu red</li>
+                  <li><i class="fas fa-check" data-tooltip="Seguridad"></i> Seguridad cibernética de última generación</li>
+                  <li><i class="fas fa-check" data-tooltip="Optimización"></i> Optimización de ancho de banda</li>
+                </ul>
+              </div>
+            </div>
           </div>
+          <button class="carousel-btn next" aria-label="Siguiente servicio">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -116,16 +176,90 @@
         <div class="footer-links">
           <h4>Enlaces Rápidos</h4>
           <ul>
-            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="#inicio">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="index.html#catalogo">Catálogo</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
+        </div>
+        <div class="footer-services">
+          <h4>Nuestros Servicios</h4>
+          <ul>
+            <li><a href="servicios.html#servicio-desarrollo-web" onclick="scrollToService(0)">Desarrollo web</a></li>
+            <li><a href="servicios.html#servicio-aplicaciones-moviles" onclick="scrollToService(1)">Aplicaciones móviles</a></li>
+            <li><a href="servicios.html#servicio-software-personalizado" onclick="scrollToService(2)">Software personalizado</a></li>
+            <li><a href="servicios.html#servicio-analisis-datos" onclick="scrollToService(3)">Análisis de datos</a></li>
+            <li><a href="servicios.html#servicio-gestion-inversiones" onclick="scrollToService(4)">Gestión de inversiones</a></li>
+            <li><a href="servicios.html#servicio-optimizacion-ventas" onclick="scrollToService(5)">Optimización de ventas</a></li>
+            <li><a href="servicios.html#servicio-redes-inteligentes" onclick="scrollToService(6)">Redes inteligentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contáctanos</h4>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h5>Dirección</h5>
+              <p>Av. Tecnológica 123, Ciudad Digital</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h5>Teléfono</h5>
+              <p>+123 456 7890</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h5>Email</h5>
+              <p><a href="mailto:info@enkinet.com">info@enkinet.com</a></p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://facebook.com/enkinet" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/enkinet" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/enkinet" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/enkinet" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Suscríbete para recibir noticias y actualizaciones</p>
+          <form id="newsletterForm" action="newsletter-signup.php" method="POST">
+            <div class="form-group">
+              <input type="email" id="newsletterEmail" name="email" placeholder="Tu correo electrónico" required>
+              <button type="submit" class="btn-primary">Suscribirse</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p> 2025 EnkiNet. Todos los derechos reservados.</p>
+        <div class="footer-legal">
+          <a href="politica-privacidad.html">Política de Privacidad</a>
+          <a href="terminos-condiciones.html">Términos y Condiciones</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Botón de volver arriba -->
+  <a href="#inicio" class="back-to-top" aria-label="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="script.js" defer></script>
+  <script>
+    // Establecer el año actual dinámicamente en el footer
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
